@@ -1,4 +1,4 @@
-# Privacy Policy - Rijunime Helper Extension
+# Privacy Policy - Rijunime.Com Extension
 
 **Last Updated:** December 2024  
 **Extension Version:** 1.0.0
