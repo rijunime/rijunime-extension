@@ -1,6 +1,6 @@
 # Privacy Policy - Rijunime.Com Extension
 
-**Last Updated:** December 2024  
+**Last Updated:** Agustus 2025  
 **Extension Version:** 1.0.0
 
 ## 📋 Overview
