@@ -1,0 +1,302 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 350px;
+    min-height: 500px;
+    background: linear-gradient(135deg, #ff1493 0%, #8b008b 100%);
+    color: #333;
+}
+
+.container {
+    background: white;
+    border-radius: 10px;
+    margin: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.header {
+    background: linear-gradient(135deg, #ff1493 0%, #8b008b 100%);
+    color: white;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: white;
+    padding: 4px;
+}
+
+.header h1 {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.tabs {
+    display: flex;
+    background: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.tab-button {
+    flex: 1;
+    padding: 12px 8px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 500;
+    color: #6c757d;
+    transition: all 0.3s ease;
+}
+
+.tab-button:hover {
+    background: #e9ecef;
+    color: #495057;
+}
+
+.tab-button.active {
+    background: white;
+    color: #ff1493;
+    border-bottom: 2px solid #ff1493;
+}
+
+.tab-content {
+    padding: 15px;
+    max-height: 350px;
+    overflow-y: auto;
+}
+
+.section {
+    margin-bottom: 20px;
+}
+
+.section h3 {
+    font-size: 14px;
+    font-weight: 600;
+    color: #495057;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #dee2e6;
+    padding-bottom: 5px;
+}
+
+.episode-list, .anime-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.episode-item, .anime-item {
+    background: #f8f9fa;
+    padding: 10px;
+    border-radius: 6px;
+    border-left: 3px solid #ff1493;
+    transition: all 0.3s ease;
+}
+
+.episode-item:hover, .anime-item:hover {
+    background: #e9ecef;
+    transform: translateX(2px);
+}
+
+.episode-title, .anime-title {
+    font-size: 12px;
+    font-weight: 600;
+    color: #495057;
+    margin-bottom: 4px;
+}
+
+.episode-info, .anime-info {
+    font-size: 10px;
+    color: #6c757d;
+}
+
+.loading, .empty-state {
+    text-align: center;
+    color: #6c757d;
+    font-size: 12px;
+    padding: 20px;
+    font-style: italic;
+}
+
+.setting-item {
+    display: flex;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid #f1f3f4;
+}
+
+.setting-item:last-child {
+    border-bottom: none;
+}
+
+.setting-item label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    font-size: 12px;
+    color: #495057;
+    width: 100%;
+}
+
+.setting-item input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    accent-color: #ff1493;
+}
+
+.btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    margin: 4px;
+}
+
+.btn-primary {
+    background: #ff1493;
+    color: white;
+    width: 100%;
+}
+
+.btn-primary:hover {
+    background: #e91e63;
+    transform: translateY(-1px);
+}
+
+.btn-secondary {
+    background: #6c757d;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background: #5a6268;
+}
+
+.btn-danger {
+    background: #dc3545;
+    color: white;
+}
+
+.btn-danger:hover {
+    background: #c82333;
+}
+
+.footer {
+    padding: 15px;
+    border-top: 1px solid #dee2e6;
+    background: #f8f9fa;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+}
+
+body.dark-mode .container {
+    background: #2c3e50;
+    color: #ecf0f1;
+}
+
+body.dark-mode .tabs {
+    background: #34495e;
+    border-bottom-color: #4a5f7a;
+}
+
+body.dark-mode .tab-button {
+    color: #bdc3c7;
+}
+
+body.dark-mode .tab-button:hover {
+    background: #4a5f7a;
+    color: #ecf0f1;
+}
+
+body.dark-mode .tab-button.active {
+    background: #2c3e50;
+    color: #667eea;
+}
+
+body.dark-mode .section h3 {
+    color: #ecf0f1;
+    border-bottom-color: #4a5f7a;
+}
+
+body.dark-mode .episode-item,
+body.dark-mode .anime-item {
+    background: #34495e;
+    color: #ecf0f1;
+}
+
+body.dark-mode .episode-item:hover,
+body.dark-mode .anime-item:hover {
+    background: #4a5f7a;
+}
+
+body.dark-mode .episode-title,
+body.dark-mode .anime-title {
+    color: #ecf0f1;
+}
+
+body.dark-mode .episode-info,
+body.dark-mode .anime-info {
+    color: #bdc3c7;
+}
+
+body.dark-mode .setting-item {
+    border-bottom-color: #4a5f7a;
+}
+
+body.dark-mode .setting-item label {
+    color: #ecf0f1;
+}
+
+body.dark-mode .footer {
+    background: #34495e;
+    border-top-color: #4a5f7a;
+}
+
+/* Scrollbar styling */
+.tab-content::-webkit-scrollbar {
+    width: 6px;
+}
+
+.tab-content::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+}
+
+.tab-content::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 3px;
+}
+
+.tab-content::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}
+
+body.dark-mode .tab-content::-webkit-scrollbar-track {
+    background: #34495e;
+}
+
+body.dark-mode .tab-content::-webkit-scrollbar-thumb {
+    background: #4a5f7a;
+}
+
+body.dark-mode .tab-content::-webkit-scrollbar-thumb:hover {
+    background: #5d6d7e;
+}

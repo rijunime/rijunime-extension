@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rijunime.Com</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="icons/icon32.png" alt="Rijunime.Com" class="logo">
+            <h1>Rijunime.Com</h1>
+        </div>
+        
+        <div class="tabs">
+            <button class="tab-button active" data-tab="watchlist">Watchlist</button>
+            <button class="tab-button" data-tab="favorites">Favorit</button>
+            <button class="tab-button" data-tab="settings">Pengaturan</button>
+        </div>
+
+        <div class="tab-content" id="watchlist">
+            <div class="section">
+                <h3>Episode Terbaru</h3>
+                <div id="recent-episodes" class="episode-list">
+                    <div class="loading">Memuat episode terbaru...</div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h3>Sedang Ditonton</h3>
+                <div id="watching-list" class="anime-list">
+                    <div class="empty-state">Belum ada anime yang sedang ditonton</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-content" id="favorites" style="display: none;">
+            <div class="section">
+                <h3>Anime Favorit</h3>
+                <div id="favorites-list" class="anime-list">
+                    <div class="empty-state">Belum ada anime favorit</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-content" id="settings" style="display: none;">
+            <div class="section">
+                <h3>Pengaturan</h3>
+                <div class="setting-item">
+                    <label>
+                        <input type="checkbox" id="notifications-enabled" checked>
+                        <span>Notifikasi Episode Baru</span>
+                    </label>
+                </div>
+                <div class="setting-item">
+                    <label>
+                        <input type="checkbox" id="auto-quality" checked>
+                        <span>Pilih Kualitas Otomatis</span>
+                    </label>
+                </div>
+                <div class="setting-item">
+                    <label>
+                        <input type="checkbox" id="skip-intro" checked>
+                        <span>Lewati Intro Otomatis</span>
+                    </label>
+                </div>
+                <div class="setting-item">
+                    <label>
+                        <input type="checkbox" id="dark-mode">
+                        <span>Mode Gelap</span>
+                    </label>
+                </div>
+                <div class="setting-item">
+                    <label>
+                        <input type="checkbox" id="analytics-enabled" checked>
+                        <span>Analytics & Usage Data</span>
+                    </label>
+                    <small style="color: #6c757d; font-size: 10px; margin-left: 26px; display: block;">
+                        Membantu meningkatkan extension (anonim)
+                    </small>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h3>Aksi</h3>
+                <button id="clear-data" class="btn btn-danger">Hapus Data</button>
+                <button id="export-data" class="btn btn-secondary">Export Data</button>
+            </div>
+        </div>
+
+        <div class="footer">
+            <button id="visit-site" class="btn btn-primary">Buka Rijunime.com</button>
+        </div>
+    </div>
+
+    <script src="analytics-config.js"></script>
+    <script src="analytics.js"></script>
+    <script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Icons for Rijunime Helper</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .icon-creator { margin: 20px 0; }
+        canvas { border: 1px solid #ccc; margin: 10px; }
+        .download-section { margin-top: 20px; }
+        button { padding: 10px 20px; margin: 5px; background: #667eea; color: white; border: none; border-radius: 4px; cursor: pointer; }
+        button:hover { background: #5a6fd8; }
+    </style>
+</head>
+<body>
+    <h1>Rijunime Helper - Icon Creator</h1>
+    <p>This page helps create simple icons for the extension. Open this in a browser and click the buttons to generate and download icons.</p>
+    
+    <div class="icon-creator">
+        <h3>Generated Icons:</h3>
+        <canvas id="icon16" width="16" height="16"></canvas>
+        <canvas id="icon32" width="32" height="32"></canvas>
+        <canvas id="icon48" width="48" height="48"></canvas>
+        <canvas id="icon128" width="128" height="128"></canvas>
+    </div>
+    
+    <div class="download-section">
+        <button onclick="createIcons()">Generate Icons</button>
+        <button onclick="downloadIcon('icon16', '16')">Download 16px</button>
+        <button onclick="downloadIcon('icon32', '32')">Download 32px</button>
+        <button onclick="downloadIcon('icon48', '48')">Download 48px</button>
+        <button onclick="downloadIcon('icon128', '128')">Download 128px</button>
+        <button onclick="downloadAll()">Download All</button>
+    </div>
+
+    <script>
+        function createIcons() {
+            const sizes = [16, 32, 48, 128];
+            
+            sizes.forEach(size => {
+                const canvas = document.getElementById(`icon${size}`);
+                const ctx = canvas.getContext('2d');
+                
+                // Clear canvas
+                ctx.clearRect(0, 0, size, size);
+                
+                // Create gradient background
+                const gradient = ctx.createLinearGradient(0, 0, size, size);
+                gradient.addColorStop(0, '#667eea');
+                gradient.addColorStop(1, '#764ba2');
+                
+                // Draw background circle
+                ctx.fillStyle = gradient;
+                ctx.beginPath();
+                ctx.arc(size/2, size/2, size/2 - 2, 0, 2 * Math.PI);
+                ctx.fill();
+                
+                // Draw "R" letter
+                ctx.fillStyle = 'white';
+                ctx.font = `bold ${size * 0.6}px Arial`;
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'middle';
+                ctx.fillText('R', size/2, size/2);
+                
+                // Add small anime-style decoration
+                if (size >= 32) {
+                    ctx.fillStyle = '#FFD700';
+                    ctx.beginPath();
+                    ctx.arc(size * 0.75, size * 0.25, size * 0.08, 0, 2 * Math.PI);
+                    ctx.fill();
+                }
+            });
+        }
+        
+        function downloadIcon(canvasId, size) {
+            const canvas = document.getElementById(canvasId);
+            const link = document.createElement('a');
+            link.download = `icon${size}.png`;
+            link.href = canvas.toDataURL();
+            link.click();
+        }
+        
+        function downloadAll() {
+            const sizes = ['16', '32', '48', '128'];
+            sizes.forEach((size, index) => {
+                setTimeout(() => {
+                    downloadIcon(`icon${size}`, size);
+                }, index * 200);
+            });
+        }
+        
+        // Auto-generate icons on page load
+        window.onload = function() {
+            createIcons();
+        };
+    </script>
+</body>
+</html>
